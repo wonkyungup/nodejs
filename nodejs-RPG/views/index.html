@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Main</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#input").keydown(function(key){
+				if (key.keyCode == 13){
+					var inputValue = $("#input").val();
+					$("#output").val(inputValue);
+					}
+			
+			});
+			$("#output").keydown(function(key){
+				if (key.keyCode == 13){
+					var outputValue = $("#output").val();
+					$("#list_test").append("<h3><li>"+ outputValue +"</li></h3>")
+				}
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<a href="/">1</a>                   <a href="/about">2</a>
+		<br></br>
+		<p>jquery 를 이용하여, input에 내용을 입력하고 엔터를 누르면, output 에 입력했던 내용을 보여준다. output 은 엔터를 누를 때마다 append 한다.</p>
+		<br></br>
+		<input type="text" id="input" placeholder="input : text" style="width:400px;height:100px;font-size:30px"></input>
+		<br></br>
+		<input type="text" id="output" placeholder="output : text" style="width:400px;height:100px;font-size:30px"></input>
+		<div id="list_test"></div>
+	</body>
+</html>

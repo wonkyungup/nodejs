@@ -1,0 +1,33 @@
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Main</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#input").keydown(function(key){
+				if (key.keyCode == 13){
+					var returnValue = confirm("Data Add ?");
+					if(returnValue == true){
+						var inputValue = $("#input").val();
+						var getTest = $("#input").text(inputValue);
+						tmp = getTest.text();
+						
+						$("#list_test").append('<h2><li>'+ tmp +'</li></h2>');						
+					}
+				}
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<a href="/">1</a>                   <a href="/about">2</a>
+		<br></br>
+		<p>jquery 로 이용: input 에서 enter 누르면 입력된 내용을 output 에 append해준다.</p>
+		<p>경고창으로 컨트롤할수있도록 변경하였습니다</p>
+		<br></br>
+		<input type="text" id="input" placeholder="input : text" style="width:400px;height:100px;font-size:30px"></input>
+		<div id="list_test"></div>
+	</body>
+</html>
